@@ -2,7 +2,8 @@ from telegram.ext import *
 from ipynb.fs.full.Algorithm import ghigliottina, inverted_dictionary
 import re
 
-API_KEY = '6132340853:AAFJ83pZj1COOfNLFdezRndawTzCEHIc_b4'
+with open('token.txt') as token_file:
+    api_key = token_file.read()
 
 def start(update, context):
     update.message.reply_text('Inserisci 5 indizi separati da spazi o virgole')
@@ -31,9 +32,7 @@ def process_input(string):
     
     return words
 
-print("Bot in esecuzione...")
-
-updater = Updater(API_KEY, use_context=True)
+updater = Updater(api_key, use_context=True)
 dp = updater.dispatcher
 
 dp.add_handler(CommandHandler("start", start))
@@ -41,4 +40,5 @@ dp.add_handler(MessageHandler(Filters.text, handle_message))
 dp.add_error_handler(error)
 
 updater.start_polling()
+print("Bot in esecuzione...")
 updater.idle()
