@@ -16,7 +16,7 @@ given the 5 clues, is capable of solving this final part of the game.
 
 The project gathers its knowledge from a set of different corpuses.
 In this repository you will find all the files needed to execute our bot 
-and almost all the files needed to replicate the project.
+and almost all the files needed to replicate the project.  
 The two of them used to represent the Italian language, the larger ones,
 are not included in this directory since the storing space is limited.
 In order to correcly set-up the Telegram Bot you are supposed to download them:  
